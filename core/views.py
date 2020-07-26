@@ -20,7 +20,7 @@ def about_page(request):
 
 def contact_page(request):
     context = {
-        "title": "Contact",
+        "title": "Página de contato",
         "content": "Contact"
     }
-    return render(request, 'Contact.html', context)
+    return render(request, 'contact.html', context)

@@ -10,7 +10,12 @@
 
     <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
-       <title>{% block title %}My amazing site{% endblock %}</title>
+
+      <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" sizes="32x32">
+      <link rel="icon" type="image/png" href="{% static 'img/android-chrome-192x192.png' %}" sizes="192x192">
+      <link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}" sizes="16x16">
+
+      <title>{% block title %}My amazing site{% endblock %}</title>
   </head>
   <body>
     {% block content %}
