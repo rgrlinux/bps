@@ -19,9 +19,13 @@ from django.urls import path, include
 from django.conf import settings as s
 from django.conf.urls.static import static
 
+from products.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    path('products/', ProductListView.as_view()),
+    path('products-fbv', product_list_view),
 ]
 if s.DEBUG:
     urlpatterns += static(s.STATIC_URL, document_root=s.STATICFILES_DIRS)
