@@ -25,7 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('products/', ProductListView.as_view()),
+    path('products/<int:pk>', ProductDetailView.as_view()),
     path('products-fbv', product_list_view),
+    path('products-fbv/<int:pk>', product_detail_view),
 ]
 if s.DEBUG:
     urlpatterns += static(s.STATIC_URL, document_root=s.STATICFILES_DIRS)
