@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import Product
@@ -29,13 +30,20 @@ class ProductDetailView(DetailView):
     template_name = 'detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ProductDetailView, self).get_context_data( **kwargs)
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
         return context
 
 
 # Function based view
 def product_detail_view(request, pk=None, *args, **kwargs):
-    instance = get_object_or_404(Product, pk=pk)
+    #    instance = get_object_or_404(Product, pk=pk)
+    try:
+        instance = Product.objects.get(id=pk)
+    except Product.DoesNotExist:
+        print('Nenhum produto encontrado aqui!')
+        raise Http404('Esse produto não existe')
+    except:
+        print('uhuuu')
 
     context = {
         'object': instance
