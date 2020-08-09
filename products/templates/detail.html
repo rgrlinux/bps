@@ -3,5 +3,7 @@
 {% block content %}
     <h1> {{ object.title }}</h1>
     <p> {{ object.description }}</p>
-    <p><img src='{{ object.image.url }}' class='img-fluid' /> </p>
+    {% if object.image %}
+        <p><img src='{{ object.image.url }}' class='img-fluid' /> </p>
+    {% endif %}
 {% endblock %}
