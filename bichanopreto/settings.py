@@ -13,7 +13,7 @@ SECRET_KEY = '$ydy$yrvko6fk=1$d6+n!z#c8yw#!7rzvk^iqf(=bt47rtkcw&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -108,7 +108,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/mnt/Projects/workspace/ecom/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/mnt/Projects/workspace/ecom/static/',
+]
 
 MEDIA_URL = '/media/'
 
