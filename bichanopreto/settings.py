@@ -110,9 +110,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/mnt/Projects/workspace/ecom/static/',
+    '/home/rogerio/Projects/research/ecomm/static/',
 ]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = '/mnt/Projects/workspace/ecom/static/media/'
+MEDIA_ROOT = '/home/rogerio/Projects/research/ecomm/static/media/'
