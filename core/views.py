@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login, get_user_model
+from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.shortcuts import render, redirect
 from .forms import *
 
@@ -53,6 +53,14 @@ def login_page(request):
         else:
             print('Login inválido')
     return render(request, 'auth/login.html', context)
+
+
+def logout_page(request):
+    context = {
+        'content': 'Você efetuou logout com sucesso!'
+    }
+    logout(request)
+    return render(request, 'auth/logout.html', context)
 
 
 User = get_user_model()
