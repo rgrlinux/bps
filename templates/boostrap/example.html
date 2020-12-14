@@ -13,6 +13,32 @@
     <body>
         <div class="container">
             <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-secondary">
+                        Navbar
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="alert alert-primary" role="alert" style="min-height: 800px;">
+                        A simple primary checkout!
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="alert alert-primary" role="alert" style="min-height: 800px;">
+                        A simple primary alert -- check it out!
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="alert alert-primary" role="alert" style="min-height: 800px;">
+                        A simple primary alert -- check it out!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
                 {%  for n in '121111111111'|make_list %}
                     <div class="col-{{ n }}">
                         <div class="{% cycle "alert alert-primary" "alert alert-secondary" %}" role="alert">
