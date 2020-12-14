@@ -8,17 +8,29 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <title>Hello, world!</title>
+        <title>bootstrap example</title>
     </head>
     <body>
         <div class="container">
-            <div class="alert alert-primary" role="alert">
-                A simple primary alert -- check it out!
+            <div class="row">
+                {%  for n in '121111111111'|make_list %}
+                    <div class="col-{{ n }}">
+                        <div class="{% cycle "alert alert-primary" "alert alert-secondary" %}" role="alert">
+                            A simple {% cycle "primary" "secondary" %} alert -- check it out!
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div class="container-fluid">
-            <div class="alert alert-secondary" role="alert">
-                A simple second alert -- check it out!
+            <div class="row">
+                {%  for n in '111111111111'|make_list %}
+                    <div class="col-1">
+                        <div class="{% cycle "alert alert-primary" "alert alert-secondary" %}"   role="alert">
+                            A simple {% cycle "primary" "secondary" %} alert -- check it out!
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <!-- Optional JavaScript -->
